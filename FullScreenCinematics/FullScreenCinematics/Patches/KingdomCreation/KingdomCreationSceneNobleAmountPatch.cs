@@ -19,7 +19,7 @@ namespace FullScreenCinematics.Patches.KingdomCreation
             Equipment overridenEquipment = leader.BattleEquipment.Clone(false);
             CampaignSceneNotificationHelper.RemoveWeaponsFromEquipment(ref overridenEquipment, true, false);
             list.Add(CampaignSceneNotificationHelper.CreateNotificationCharacterFromHero(leader, overridenEquipment, false, default(BodyProperties), uint.MaxValue, uint.MaxValue, false));
-            foreach (Hero hero in CampaignSceneNotificationHelper.GetMilitaryAudienceForKingdom(__instance.NewKingdom, false).Take(8))
+            foreach (Hero hero in CampaignSceneNotificationHelper.GetMilitaryAudienceForKingdom(__instance.NewKingdom, false).Take(8))  //changed from take(5)
             {
                 Equipment overridenEquipment2 = hero.CivilianEquipment.Clone(false);
                 CampaignSceneNotificationHelper.RemoveWeaponsFromEquipment(ref overridenEquipment2, true, false);

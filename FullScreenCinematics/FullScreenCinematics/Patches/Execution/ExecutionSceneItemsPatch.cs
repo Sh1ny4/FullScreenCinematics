@@ -7,6 +7,7 @@ namespace FullScreenCinematics.Patches.Execution
     [HarmonyPatch(typeof(HeroExecutionSceneNotificationData), nameof(HeroExecutionSceneNotificationData.GetSceneNotificationCharacters))]
     internal class ExecutionSceneItemsPatch
     {
+        //currently not working no matter what I try
         [HarmonyPrefix]
         static bool Prefix(ref HeroExecutionSceneNotificationData __instance, ref SceneNotificationData.SceneNotificationCharacter[] __result)
         {
