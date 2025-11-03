@@ -11,7 +11,7 @@ namespace FullScreenCinematics.Patches
         static void Postfix(ref BecomeKingSceneNotificationItem __instance, ref string __result)
         {
             string text = string.Concat(new object[] { "scn_become_king_notification_", __instance.NewLeaderHero.Culture.StringId });
-            var trySceneExist = new TrySceneExist();
+            var trySceneExist = new FallbackForSceneMissing();
             text = trySceneExist.TryGetSceneExist(text) ? text : "scn_become_king_notification";
             __result = text;
         }

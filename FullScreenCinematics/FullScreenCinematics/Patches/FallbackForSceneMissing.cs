@@ -5,7 +5,7 @@ using TaleWorlds.Engine;
 
 namespace FullScreenCinematics
 {
-    internal class TrySceneExist
+    internal class FallbackForSceneMissing
     {
         //honestly I would recommend this, it would be better to make sure every culture has a map and removing this code, since it's a security risk
         [HandleProcessCorruptedStateExceptions]

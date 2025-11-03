@@ -11,7 +11,7 @@ namespace FullScreenCinematics.Patches
         {
 
             string text = string.Concat(new object[] { "scn_cutscene_factionjoin_", __instance.KingdomToUse.Culture.StringId });
-            var trySceneExist = new TrySceneExist();
+            var trySceneExist = new FallbackForSceneMissing();
             text = trySceneExist.TryGetSceneExist(text) ? text : "scn_cutscene_factionjoin";
             __result = text;
         }
