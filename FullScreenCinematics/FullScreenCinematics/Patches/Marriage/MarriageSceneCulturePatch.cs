@@ -2,7 +2,7 @@
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.SceneInformationPopupTypes;
 
-namespace FullScreenCinematics.Patches
+namespace FullScreenCinematics.Patches.Marriage
 {
     [HarmonyPatch(typeof(MarriageSceneNotificationItem), nameof(MarriageSceneNotificationItem.SceneID), MethodType.Getter)]
     internal class MarriageSceneCulturePatch

@@ -1,7 +1,7 @@
 ﻿using HarmonyLib;
 using TaleWorlds.CampaignSystem.SceneInformationPopupTypes;
 
-namespace FullScreenCinematics.Patches
+namespace FullScreenCinematics.Patches.KingdomJoin
 {
     [HarmonyPatch(typeof(JoinKingdomSceneNotificationItem), nameof(JoinKingdomSceneNotificationItem.SceneID), MethodType.Getter)]
     internal class KingdomJoinSceneCulturePatch

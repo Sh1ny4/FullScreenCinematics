@@ -1,12 +1,11 @@
 ﻿using HarmonyLib;
 using TaleWorlds.CampaignSystem.SceneInformationPopupTypes;
 
-namespace FullScreenCinematics.Patches
+namespace FullScreenCinematics.Patches.BecomeKing
 {
     [HarmonyPatch(typeof(BecomeKingSceneNotificationItem), nameof(BecomeKingSceneNotificationItem.SceneID), MethodType.Getter)]
     internal class BecomeKingSceneCulturePatch
     {
-
         [HarmonyPostfix]
         static void Postfix(ref BecomeKingSceneNotificationItem __instance, ref string __result)
         {

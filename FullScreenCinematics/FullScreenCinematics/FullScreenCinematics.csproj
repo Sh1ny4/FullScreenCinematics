@@ -108,9 +108,9 @@
     <Compile Include="Patches\Execution\ExecutionSceneItemsPatch.cs" />
     <Compile Include="Patches\FullScreenCinematics.cs" />
     <Compile Include="Patches\KingdomCreation\KingdomCreationSceneNobleAmountPatch.cs" />
-    <Compile Include="Patches\MarriageSceneCulturePatch.cs" />
-    <Compile Include="Patches\BecomeKingSceneCulturePatch.cs" />
-    <Compile Include="Patches\KingdomJoinSceneCulturePatch.cs" />
+    <Compile Include="Patches\Marriage\MarriageSceneCulturePatch.cs" />
+    <Compile Include="Patches\BecomeKing\BecomeKingSceneCulturePatch.cs" />
+    <Compile Include="Patches\KingdomJoin\KingdomJoinSceneCulturePatch.cs" />
     <Compile Include="Patches\KingdomCreation\KingdomCreationSceneCulturePatch.cs" />
     <Compile Include="Patches\FallbackForSceneMissing.cs" />
     <Compile Include="SubModule.cs" />
