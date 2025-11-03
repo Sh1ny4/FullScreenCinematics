@@ -2,12 +2,11 @@
 using TaleWorlds.CampaignSystem.SceneInformationPopupTypes;
 using TaleWorlds.Core;
 
-namespace FullScreenCinematics.Patches
+namespace FullScreenCinematics.Patches.Execution
 {
     [HarmonyPatch(typeof(HeroExecutionSceneNotificationData), nameof(HeroExecutionSceneNotificationData.GetSceneNotificationCharacters))]
     internal class ExecutionSceneItemsPatch
     {
-
         [HarmonyPrefix]
         static bool Prefix(ref HeroExecutionSceneNotificationData __instance, ref SceneNotificationData.SceneNotificationCharacter[] __result)
         {

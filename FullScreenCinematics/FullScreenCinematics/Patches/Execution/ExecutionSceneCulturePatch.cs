@@ -6,12 +6,11 @@ using TaleWorlds.Engine;
 using TaleWorlds.Library;
 using TaleWorlds.ModuleManager;
 
-namespace FullScreenCinematics.Patches
+namespace FullScreenCinematics.Patches.Execution
 {
     [HarmonyPatch(typeof(HeroExecutionSceneNotificationData), nameof(HeroExecutionSceneNotificationData.SceneID), MethodType.Getter)]
     internal class ExecutionSceneCulturePatch
     {
-
         [HarmonyPostfix]
         static void Postfix(ref HeroExecutionSceneNotificationData __instance, ref string __result)
         {

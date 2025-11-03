@@ -2,7 +2,7 @@
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.SceneInformationPopupTypes;
 
-namespace FullScreenCinematics.Patches
+namespace FullScreenCinematics.Patches.KingdomCreation
 {
     [HarmonyPatch(typeof(KingdomCreatedSceneNotificationItem), nameof(KingdomCreatedSceneNotificationItem.SceneID), MethodType.Getter)]
     internal class KingdomCreationSceneCulturePatch : KingdomCreatedSceneNotificationItem

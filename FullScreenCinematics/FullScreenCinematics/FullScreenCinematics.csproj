@@ -104,13 +104,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Patches\ExecutionSceneCulturePatch.cs" />
-    <Compile Include="Patches\ExecutionSceneItemsPatch.cs" />
+    <Compile Include="Patches\Execution\ExecutionSceneCulturePatch.cs" />
+    <Compile Include="Patches\Execution\ExecutionSceneItemsPatch.cs" />
     <Compile Include="Patches\FullScreenCinematics.cs" />
+    <Compile Include="Patches\KingdomCreation\KingdomCreationSceneNobleAmountPatch.cs" />
     <Compile Include="Patches\MarriageSceneCulturePatch.cs" />
     <Compile Include="Patches\BecomeKingSceneCulturePatch.cs" />
     <Compile Include="Patches\KingdomJoinSceneCulturePatch.cs" />
-    <Compile Include="Patches\KingdomCreationSceneCulturePatch.cs" />
+    <Compile Include="Patches\KingdomCreation\KingdomCreationSceneCulturePatch.cs" />
     <Compile Include="Patches\FallbackForSceneMissing.cs" />
     <Compile Include="SubModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
