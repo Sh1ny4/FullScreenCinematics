@@ -64,6 +64,10 @@
     <Reference Include="TaleWorlds.Core.ViewModelCollection">
       <HintPath>..\..\..\..\bin\Win64_Shipping_Client\TaleWorlds.Core.ViewModelCollection.dll</HintPath>
     </Reference>
+    <Reference Include="TaleWorlds.DotNet, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\Win64_Shipping_Client\TaleWorlds.DotNet.dll</HintPath>
+    </Reference>
     <Reference Include="TaleWorlds.Engine">
       <HintPath>..\..\..\..\bin\Win64_Shipping_Client\TaleWorlds.Engine.dll</HintPath>
     </Reference>
@@ -75,6 +79,10 @@
     </Reference>
     <Reference Include="TaleWorlds.GauntletUI.ExtraWidgets">
       <HintPath>..\..\..\..\bin\Win64_Shipping_Client\TaleWorlds.GauntletUI.ExtraWidgets.dll</HintPath>
+    </Reference>
+    <Reference Include="TaleWorlds.InputSystem, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\Win64_Shipping_Client\TaleWorlds.InputSystem.dll</HintPath>
     </Reference>
     <Reference Include="TaleWorlds.Library">
       <HintPath>..\..\..\..\bin\Win64_Shipping_Client\TaleWorlds.Library.dll</HintPath>
@@ -96,7 +104,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Patches\FullScreenCinematics.cs" />
+    <Compile Include="Patches\ExecutionSceneCulturePatch.cs" />
+    <Compile Include="Patches\ExecutionSceneItemsPatch.cs" />
+    <Compile Include="Patches\MarriageSceneCulturePatch.cs" />
+    <Compile Include="Patches\BecomeKingSceneCulturePatch.cs" />
+    <Compile Include="Patches\KingdomJoinSceneCulturePatch.cs" />
+    <Compile Include="Patches\KingdomCreationSceneCulturePatch.cs" />
+    <Compile Include="Patches\TrySceneExist.cs" />
     <Compile Include="SubModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
