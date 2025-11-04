@@ -1,14 +1,16 @@
 ﻿using HarmonyLib;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using TaleWorlds.CampaignSystem;
+using TaleWorlds.CampaignSystem.Roster;
 using TaleWorlds.CampaignSystem.SceneInformationPopupTypes;
 using TaleWorlds.Core;
-using System.Linq;
 
 namespace FullScreenCinematics.Patches.KingdomCreation
 {
     [HarmonyPatch(typeof(KingdomCreatedSceneNotificationItem), nameof(KingdomCreatedSceneNotificationItem.GetSceneNotificationCharacters))]
-    internal class KingdomCreationSceneNobleAmountPatch
+    internal class KingdomCreationSceneNPCAmountPatch
     {
 
         [HarmonyPostfix]
@@ -24,6 +26,13 @@ namespace FullScreenCinematics.Patches.KingdomCreation
                 Equipment overridenEquipment2 = hero.CivilianEquipment.Clone(false);
                 CampaignSceneNotificationHelper.RemoveWeaponsFromEquipment(ref overridenEquipment2, true, false);
                 list.Add(CampaignSceneNotificationHelper.CreateNotificationCharacterFromHero(hero, overridenEquipment2, false, default(BodyProperties), uint.MaxValue, uint.MaxValue, false));
+            }
+            TroopRoster roster = leader.PartyBelongedTo.MemberRoster;
+            for (int i = 0; i < 10; i++)
+            {
+                Random rnd = new Random();
+                int rand = rnd.Next(roster.TotalManCount);
+                __result.AddItem(new SceneNotificationData.SceneNotificationCharacter(roster.GetCharacterAtIndex(rand)));
             }
             __result = list.ToArray();
         }

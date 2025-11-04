@@ -7,7 +7,6 @@
 	<MultiplayerModule value="false"/>
 	<ModuleType value ="Community" />
 	<DependedModules>
-		<DependedModule Id="Bannerlord.Harmony"/>
 		<DependedModule Id="Native"/>
 		<DependedModule Id="Sandbox"/>
 		<DependedModule Id="SandBoxCore"/>

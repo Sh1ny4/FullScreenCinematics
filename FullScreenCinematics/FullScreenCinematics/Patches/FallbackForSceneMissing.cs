@@ -3,7 +3,7 @@ using System.Runtime.ExceptionServices;
 using System.Security;
 using TaleWorlds.Engine;
 
-namespace FullScreenCinematics
+namespace FullScreenCinematics.Patches
 {
     internal class FallbackForSceneMissing
     {

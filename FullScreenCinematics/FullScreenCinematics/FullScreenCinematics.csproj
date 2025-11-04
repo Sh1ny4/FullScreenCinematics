@@ -104,17 +104,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Patches\ClanMemberDeath\ClanMemberDeathPeaceCulturePatch.cs" />
+    <Compile Include="Patches\ClanMemberDeath\ClanMemberDeathWarCulturePatch.cs" />
     <Compile Include="Patches\Execution\ExecutionSceneCulturePatch.cs" />
-    <Compile Include="Patches\Execution\ExecutionSceneItemsPatch.cs" />
-    <Compile Include="Patches\FullScreenCinematics.cs" />
-    <Compile Include="Patches\KingdomCreation\KingdomCreationSceneNobleAmountPatch.cs" />
+    <Compile Include="Patches\Execution\ExecutionSceneNPCAmountPatch.cs" />
+    <Compile Include="Patches\KingdomCreation\KingdomCreationSceneNPCAmountPatch.cs" />
     <Compile Include="Patches\Marriage\MarriageSceneCulturePatch.cs" />
     <Compile Include="Patches\BecomeKing\BecomeKingSceneCulturePatch.cs" />
     <Compile Include="Patches\KingdomJoin\KingdomJoinSceneCulturePatch.cs" />
     <Compile Include="Patches\KingdomCreation\KingdomCreationSceneCulturePatch.cs" />
     <Compile Include="Patches\FallbackForSceneMissing.cs" />
+    <Compile Include="Patches\PlayerDeath\BattleDeathDefeatCulturePatch.cs" />
+    <Compile Include="Patches\PlayerDeath\BattleDeathVictoryCulturePatch.cs" />
+    <Compile Include="Patches\PlayerDeath\DeathOldAgeSceneCulturePatch.cs" />
+    <Compile Include="Patches\PlayerDeath\NavalDeathSceneCulturePatch.cs" />
     <Compile Include="SubModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
