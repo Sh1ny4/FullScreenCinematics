@@ -108,6 +108,7 @@
     <Compile Include="Patches\ClanMemberDeath\ClanMemberDeathWarCulturePatch.cs" />
     <Compile Include="Patches\Execution\ExecutionSceneCulturePatch.cs" />
     <Compile Include="Patches\Execution\ExecutionSceneNPCAmountPatch.cs" />
+    <Compile Include="Patches\FullScreenCinematics.cs" />
     <Compile Include="Patches\KingdomCreation\KingdomCreationSceneNPCAmountPatch.cs" />
     <Compile Include="Patches\KingdomJoin\KingdomJoinSceneNPCAmountPatch.cs" />
     <Compile Include="Patches\Marriage\MarriageSceneCulturePatch.cs" />

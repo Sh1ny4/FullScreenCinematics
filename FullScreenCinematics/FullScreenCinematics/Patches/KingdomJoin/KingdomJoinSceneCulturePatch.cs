@@ -10,7 +10,7 @@ namespace FullScreenCinematics.Patches.KingdomJoin
         static void Postfix(ref JoinKingdomSceneNotificationItem __instance, ref string __result)
         {
 
-            string text = string.Concat(new object[] { "scn_cutscene_factionjoin_", __instance.KingdomToUse.Culture.StringId });
+            string text = string.Concat(new object[] { "scn_cutscene_factionjoin", "_", __instance.KingdomToUse.Culture.StringId });
             var trySceneExist = new FallbackForSceneMissing();
             text = trySceneExist.TryGetSceneExist(text) ? text : "scn_cutscene_factionjoin";
             __result = text;

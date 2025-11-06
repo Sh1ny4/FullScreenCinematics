@@ -1,12 +1,9 @@
 ﻿using HarmonyLib;
-using System;
+using System.Collections.Generic;
+using System.Linq;
 using TaleWorlds.CampaignSystem;
-using TaleWorlds.CampaignSystem.GameComponents;
-using TaleWorlds.CampaignSystem.Party;
-using TaleWorlds.CampaignSystem.Roster;
 using TaleWorlds.CampaignSystem.SceneInformationPopupTypes;
 using TaleWorlds.Core;
-using TaleWorlds.Library;
 
 namespace FullScreenCinematics.Patches.Execution
 {
@@ -31,15 +28,19 @@ namespace FullScreenCinematics.Patches.Execution
             equipment2.AddEquipmentToSlotWithoutAgent(EquipmentIndex.Weapon2, default(EquipmentElement));
             equipment2.AddEquipmentToSlotWithoutAgent(EquipmentIndex.Weapon3, default(EquipmentElement));
             equipment2.AddEquipmentToSlotWithoutAgent(EquipmentIndex.ExtraWeaponSlot, default(EquipmentElement));
-            __result = new SceneNotificationData.SceneNotificationCharacter[]
+            List<SceneNotificationData.SceneNotificationCharacter> list = new List<SceneNotificationData.SceneNotificationCharacter>();
+            list.Add(CampaignSceneNotificationHelper.CreateNotificationCharacterFromHero(__instance.Victim, equipment, false, default(BodyProperties), uint.MaxValue, uint.MaxValue, false));
+            list.Add(CampaignSceneNotificationHelper.CreateNotificationCharacterFromHero(__instance.Executer, equipment2, false, default(BodyProperties), uint.MaxValue, uint.MaxValue, false));
+            foreach (Hero companion in CampaignSceneNotificationHelper.GetMilitaryAudienceForHero(__instance.Executer).Take(1))
             {
-                CampaignSceneNotificationHelper.CreateNotificationCharacterFromHero(__instance.Victim, equipment, false, default(BodyProperties), uint.MaxValue, uint.MaxValue, false),
-                CampaignSceneNotificationHelper.CreateNotificationCharacterFromHero(__instance.Executer, equipment2, false, default(BodyProperties), uint.MaxValue, uint.MaxValue, false),
-            };
+                list.Add(CampaignSceneNotificationHelper.CreateNotificationCharacterFromHero(companion, null, false, default(BodyProperties), uint.MaxValue, uint.MaxValue, false));
+            }
             for (int i = 0; i < 10; i++) 
             {
-                __result.AddItem(new SceneNotificationData.SceneNotificationCharacter(CampaignSceneNotificationHelper.GetRandomTroopForCulture(__instance.Executer.Clan.Kingdom.Culture)));
+                BasicCharacterObject npc = CampaignSceneNotificationHelper.GetRandomTroopForCulture(__instance.Executer.Clan.Kingdom.Culture);
+                list.Add(new SceneNotificationData.SceneNotificationCharacter(npc));
             }
+            __result = list.ToArray();
         }
     }
 }

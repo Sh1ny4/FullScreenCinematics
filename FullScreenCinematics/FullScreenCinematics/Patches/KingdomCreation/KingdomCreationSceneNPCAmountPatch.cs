@@ -16,10 +16,10 @@ namespace FullScreenCinematics.Patches.KingdomCreation
         [HarmonyPostfix]
         static void Postfix(ref KingdomCreatedSceneNotificationItem __instance, ref SceneNotificationData.SceneNotificationCharacter[] __result)
         {
-            List<SceneNotificationData.SceneNotificationCharacter> list = new List<SceneNotificationData.SceneNotificationCharacter>();
             Hero leader = __instance.NewKingdom.Leader;
             Equipment overridenEquipment = leader.BattleEquipment.Clone(false);
             CampaignSceneNotificationHelper.RemoveWeaponsFromEquipment(ref overridenEquipment, true, false);
+            List<SceneNotificationData.SceneNotificationCharacter> list = new List<SceneNotificationData.SceneNotificationCharacter>();
             list.Add(CampaignSceneNotificationHelper.CreateNotificationCharacterFromHero(leader, overridenEquipment, false, default(BodyProperties), uint.MaxValue, uint.MaxValue, false));
             foreach (Hero hero in CampaignSceneNotificationHelper.GetMilitaryAudienceForKingdom(__instance.NewKingdom, false).Take(12))  //changed from take(5)
             {
@@ -27,10 +27,12 @@ namespace FullScreenCinematics.Patches.KingdomCreation
                 CampaignSceneNotificationHelper.RemoveWeaponsFromEquipment(ref overridenEquipment2, true, false);
                 list.Add(CampaignSceneNotificationHelper.CreateNotificationCharacterFromHero(hero, overridenEquipment2, false, default(BodyProperties), uint.MaxValue, uint.MaxValue, false));
             }
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 10; i++)
             {
-                __result.AddItem(CampaignSceneNotificationHelper.GetBodyguardOfCulture(__instance.NewKingdom.Culture));
+                BasicCharacterObject npc = CampaignSceneNotificationHelper.GetRandomTroopForCulture(__instance.NewKingdom.Culture);
+                list.Add(new SceneNotificationData.SceneNotificationCharacter(npc));
             }
+            __result = list.ToArray();
         }
     }
 }

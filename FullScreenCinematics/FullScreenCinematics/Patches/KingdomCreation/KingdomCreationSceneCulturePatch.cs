@@ -14,7 +14,7 @@ namespace FullScreenCinematics.Patches.KingdomCreation
         [HarmonyPostfix]
         static void Postfix(ref KingdomCreatedSceneNotificationItem __instance, ref string __result)
         {
-            string text = string.Concat(new object[] { "scn_kingdom_made_", __instance.NewKingdom.Culture.StringId });
+            string text = string.Concat(new object[] { "scn_kingdom_made", "_", __instance.NewKingdom.Culture.StringId });
             var trySceneExist = new FallbackForSceneMissing();
             text = trySceneExist.TryGetSceneExist(text) ? text : "scn_kingdom_made";
             __result = text;

@@ -12,7 +12,7 @@ namespace FullScreenCinematics.Patches.Marriage
         [HarmonyPostfix]
         static void Postfix(ref MarriageSceneNotificationItem __instance, ref string __result)
         {
-            string text = string.Concat(new object[] { "scn_cutscene_wedding_", Hero.MainHero.Culture.StringId });
+            string text = string.Concat(new object[] { "scn_cutscene_wedding", "_" , Hero.MainHero.Culture.StringId });
             var trySceneExist = new FallbackForSceneMissing();
             text = trySceneExist.TryGetSceneExist(text) ? text : "scn_cutscene_wedding";
             __result = text;
