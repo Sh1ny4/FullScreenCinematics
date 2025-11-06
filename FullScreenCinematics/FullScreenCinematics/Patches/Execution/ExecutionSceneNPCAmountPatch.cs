@@ -2,6 +2,7 @@
 using System;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.GameComponents;
+using TaleWorlds.CampaignSystem.Party;
 using TaleWorlds.CampaignSystem.Roster;
 using TaleWorlds.CampaignSystem.SceneInformationPopupTypes;
 using TaleWorlds.Core;
@@ -35,12 +36,9 @@ namespace FullScreenCinematics.Patches.Execution
                 CampaignSceneNotificationHelper.CreateNotificationCharacterFromHero(__instance.Victim, equipment, false, default(BodyProperties), uint.MaxValue, uint.MaxValue, false),
                 CampaignSceneNotificationHelper.CreateNotificationCharacterFromHero(__instance.Executer, equipment2, false, default(BodyProperties), uint.MaxValue, uint.MaxValue, false),
             };
-            TroopRoster roster = __instance.Executer.PartyBelongedTo.MemberRoster;
             for (int i = 0; i < 10; i++) 
             {
-                Random rnd = new Random();
-                int rand = rnd.Next(roster.TotalManCount);
-                __result.AddItem(new SceneNotificationData.SceneNotificationCharacter(roster.GetCharacterAtIndex(rand)));
+                __result.AddItem(new SceneNotificationData.SceneNotificationCharacter(CampaignSceneNotificationHelper.GetRandomTroopForCulture(__instance.Executer.Clan.Kingdom.Culture)));
             }
         }
     }
