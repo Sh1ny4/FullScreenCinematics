@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using Helpers;
 using TaleWorlds.CampaignSystem.SceneInformationPopupTypes;
 
 namespace FullScreenCinematics.Patches.Execution
