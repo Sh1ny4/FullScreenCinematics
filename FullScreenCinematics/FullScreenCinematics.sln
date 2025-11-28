@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36623.8 d17.14
+VisualStudioVersion = 17.14.36717.8 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FullScreenCinematics", "FullScreenCinematics\FullScreenCinematics.csproj", "{F1EB300D-FD90-41F0-BBA8-B5CF3E9EF786}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FullScreenCinematics", "FullScreenCinematics.csproj", "{7DA935C2-CEFB-4E3E-8270-E36A2083E8C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F1EB300D-FD90-41F0-BBA8-B5CF3E9EF786}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F1EB300D-FD90-41F0-BBA8-B5CF3E9EF786}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F1EB300D-FD90-41F0-BBA8-B5CF3E9EF786}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F1EB300D-FD90-41F0-BBA8-B5CF3E9EF786}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DA935C2-CEFB-4E3E-8270-E36A2083E8C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DA935C2-CEFB-4E3E-8270-E36A2083E8C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DA935C2-CEFB-4E3E-8270-E36A2083E8C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DA935C2-CEFB-4E3E-8270-E36A2083E8C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {DEC157A5-4141-4F37-BC70-F61E4721E778}
+		SolutionGuid = {E9E38E72-3709-47FF-AFC3-E0E430B2C36D}
 	EndGlobalSection
 EndGlobal
