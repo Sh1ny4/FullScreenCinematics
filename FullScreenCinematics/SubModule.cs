@@ -8,7 +8,7 @@ namespace FullScreenCinematics
         protected override void OnSubModuleLoad()
         {
             base.OnSubModuleLoad();
-            new Harmony("FullScreenCinematics.patches").PatchAll();
+            new Harmony("FullScreenCinematics.FullScreenCinematics").PatchAll();
         }
     }
 }
