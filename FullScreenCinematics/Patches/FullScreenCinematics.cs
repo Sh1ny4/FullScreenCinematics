@@ -14,11 +14,14 @@ namespace FullScreenCinematics.Patches
             [HarmonyPostfix]
             static void Postfix(ref SceneNotification__TaleWorlds_Core_ViewModelCollection_Information_SceneNotificationVM __instance, ref DimensionSyncWidget ____widget_0, ref SceneWidget ____widget_0_2_0)
             {
-                //base VM widget, adapted to resolution
+                //getting the base res and adapting the UI scale
                 Vec2 res = MBWindowManager.GetScreenResolution();
-                float ratio = res.X / res.Y;
                 float UIscale = ManagedOptions.GetConfig(ManagedOptions.ManagedOptionsType.UIScale) + 0.25f;
+
+                //needed otherwise the execution buttons do not work
                 ____widget_0.SuggestedWidth = res.X / UIscale;
+
+                //sets the global window to fullscreen, is streched on widescreens
                 ____widget_0_2_0.SuggestedHeight = res.Y / UIscale;
                 ____widget_0_2_0.SuggestedWidth = res.X / UIscale;
 
