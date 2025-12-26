@@ -2,10 +2,10 @@
 <Module>
 	<Name value="Fullscreen Cinematics"/>
 	<Id value="FullScreenCinematics"/>
-	<Version value="v1.3.12"/>
+	<Version value="v1.3.13"/>
 	<SingleplayerModule value="true"/>
 	<MultiplayerModule value="false"/>
-	<ModuleType value ="Community" />
+	<ModuleType value="Community" />
 	<DependedModules>
 		<DependedModule Id="Native"/>
 		<DependedModule Id="Sandbox"/>
