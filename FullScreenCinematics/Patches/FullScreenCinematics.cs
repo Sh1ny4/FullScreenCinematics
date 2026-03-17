@@ -23,7 +23,7 @@ namespace FullScreenCinematics.Patches
 
                 //sets the global window to fullscreen, is streched on widescreens
                 ____widget_0_2_0.SuggestedHeight = res.Y / UIscale;
-                ____widget_0_2_0.SuggestedWidth = res.X / UIscale;
+                ____widget_0_2_0.SuggestedWidth = (res.Y * 16 )/ ( 9 * UIscale);
 
             }
         }
